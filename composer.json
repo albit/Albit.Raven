@@ -1,0 +1,14 @@
+{
+    "name": "albit/raven",
+    "type": "typo3-flow-package",
+    "description": "Add description here",
+    "require": {
+        "typo3/flow": "*",
+        "raven/raven": "0.9.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Albit\\Raven": "Classes"
+        }
+    }
+}
