@@ -3,7 +3,7 @@ TYPO3:
     # disable reflection for non psr-0 compliant 3rd party packages
     object:
       excludeClasses:
-      'raven.raven': ['.*']
+        'raven.raven': ['.*']
 
 # Sample Configuration for your Production Environment:
 #TYPO3:
