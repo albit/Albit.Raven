@@ -38,13 +38,16 @@ class SentryCommandController extends \TYPO3\Flow\Cli\CommandController {
 	}
 
 	/**
-	 * Test the sentry exception handling
-	 *
-	 * @throws \Exception
+	 * Test the sentry capture
 	 */
-	public function testExceptionCommand() {
-		$exception = new \TYPO3\Flow\Exception('Sentry Test');
-		$this->sentryExceptionHandler->handleException($exception);
+	public function testCaptureCommand() {
+		if (isset($this->sentryDsn) && strlen($this->sentryDsn) > 0) {
+			$ravenClient = new \Raven_Client($this->sentryDsn);
+			$ravenClient->captureMessage('Sentry Test');
+			$this->response->appendContent('Sentry "captureMessage" executed' . PHP_EOL);
+		} else {
+			$this->response->appendContent('Sentry "captureMessage" NOT executed' . PHP_EOL);
+		}
 	}
 
 }
