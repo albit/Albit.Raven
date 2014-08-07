@@ -18,6 +18,14 @@ class SentryCommandController extends \TYPO3\Flow\Cli\CommandController {
 	protected $sentryDsn;
 
 	/**
+	 * SentryExceptionHandler
+	 *
+	 * @var \Albit\Raven\Error\SentryExceptionHandler
+	 * @Flow\Inject
+	 */
+	protected $sentryExceptionHandler;
+
+	/**
 	 * Test the sentry configuration
 	 */
 	public function testConfigurationCommand() {
@@ -35,7 +43,8 @@ class SentryCommandController extends \TYPO3\Flow\Cli\CommandController {
 	 * @throws \Exception
 	 */
 	public function testExceptionCommand() {
-		throw new \Exception('Sentry Test');
+		$exception = new \TYPO3\Flow\Exception('Sentry Test');
+		$this->sentryExceptionHandler->handleException($exception);
 	}
 
 }
