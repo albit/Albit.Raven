@@ -14,9 +14,14 @@ class SentryExceptionHandler extends ProductionExceptionHandler {
 	 * @return void
 	 */
 	protected function echoExceptionWeb(\Exception $exception) {
-		if (isset($this->options['sentryDsn']) && strlen($this->options['sentryDsn']) > 0) {
-			$ravenClient = new \Raven_Client($this->options['sentryDsn']);
-			$ravenClient->captureException($exception);
+		if ($exception instanceof \TYPO3\Flow\Exception) {
+			$statusCode = $exception->getStatusCode();
+		}
+		if ($statusCode !== 404) {
+			if (isset($this->options['sentryDsn']) && strlen($this->options['sentryDsn']) > 0) {
+				$ravenClient = new \Raven_Client($this->options['sentryDsn']);
+				$ravenClient->captureException($exception);
+			}
 		}
 		parent::echoExceptionWeb($exception);
 	}
