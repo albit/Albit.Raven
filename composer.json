@@ -1,9 +1,9 @@
 {
     "name": "albit/raven",
     "type": "typo3-flow-package",
-    "description": "Add description here",
+    "description": "Raven Client for TYPO3 Flow Packages",
     "require": {
-        "typo3/flow": "*",
+        "typo3/flow": "2.1.*",
         "raven/raven": "0.9.*"
     },
     "autoload": {
