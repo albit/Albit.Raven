@@ -4,7 +4,7 @@
     "description": "Raven Client for TYPO3 Flow Packages",
     "require": {
         "typo3/flow": "~2.1",
-        "raven/raven": "0.9.*"
+        "raven/raven": "0.10.*"
     },
     "autoload": {
         "psr-0": {
