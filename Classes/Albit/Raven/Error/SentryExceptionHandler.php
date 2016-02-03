@@ -13,7 +13,7 @@ class SentryExceptionHandler extends ProductionExceptionHandler {
 	 * @param \Exception $exception
 	 * @return void
 	 */
-	protected function echoExceptionWeb(\Exception $exception) {
+	protected function echoExceptionWeb($exception) {
 		if ($exception instanceof \TYPO3\Flow\Exception) {
 			$statusCode = $exception->getStatusCode();
 		}
