@@ -30,7 +30,7 @@ class SentryExceptionHandler extends ProductionExceptionHandler {
 	 * @param \Exception $exception
 	 * @return void
 	 */
-	protected function echoExceptionCli(\Exception $exception) {
+	protected function echoExceptionCli($exception) {
 		if (isset($this->options['sentryDsn']) && strlen($this->options['sentryDsn']) > 0) {
 			$ravenClient = new \Raven_Client($this->options['sentryDsn']);
 			$ravenClient->captureException($exception);
