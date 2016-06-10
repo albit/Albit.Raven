@@ -20,7 +20,7 @@ class Package extends BasePackage
     public function boot(\TYPO3\Flow\Core\Bootstrap $bootstrap)
     {
         include_once Files::concatenatePaths(
-            array(FLOW_PATH_PACKAGES, 'Libraries/raven/raven/lib/Raven/Autoloader.php')
+            array(FLOW_PATH_PACKAGES, 'Libraries/sentry/sentry/lib/Raven/Autoloader.php')
         );
         \Raven_Autoloader::register();
     }

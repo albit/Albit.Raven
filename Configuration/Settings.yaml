@@ -3,7 +3,7 @@ TYPO3:
     # disable reflection for non psr-0 compliant 3rd party packages
     object:
       excludeClasses:
-        'raven.raven': ['.*']
+        'sentry.sentry': ['.*']
 
 # Sample Configuration for your Production Environment:
 #TYPO3:
@@ -13,4 +13,3 @@ TYPO3:
 #        className: Albit\Raven\Error\SentryExceptionHandler
 #        # Sentry DSN (e.g. "http://public:secret@example.com/1")
 #        sentryDsn: ''
-
