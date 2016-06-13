@@ -4,6 +4,8 @@ TYPO3:
     object:
       excludeClasses:
         'sentry.sentry': ['.*']
+        'monolog.monolog': ['.*']
+        'Psr.Log': ['.*']
 
 # Sample Configuration for your Production Environment:
 #TYPO3:
