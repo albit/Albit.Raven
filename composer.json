@@ -4,7 +4,7 @@
     "description": "Raven Client for TYPO3 Flow Packages",
     "license": "MIT",
     "require": {
-        "typo3/flow": "~2.1",
+        "typo3/flow": ">=2.1",
         "sentry/sentry": "0.21.*"
     },
     "autoload": {
